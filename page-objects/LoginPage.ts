@@ -7,6 +7,7 @@ export class LoginPage extends BasePage {
   readonly passwordInput: Locator
   readonly submitButton: Locator
   readonly usernameInput: Locator
+  readonly url = '/login'
 
   constructor(page: Page) {
     super(page)
