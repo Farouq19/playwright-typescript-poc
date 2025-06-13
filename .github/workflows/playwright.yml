@@ -1,8 +1,10 @@
 name: Playwright Tests
 
 on:
-  on: [push, pull_request]
-
+  push:         # Run on every push
+  pull_request: # Run on every pull request
+  schedule:     # Run daily at 09:00 UTC (adjust for your timezone)
+    - cron: '0 9 * * *'
 
 jobs:
   test:

@@ -4,17 +4,17 @@
   "description": "Test core repo with Playwright and TypeScript",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
-    "test:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
-    "test:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
-    "test:e2e": "playwright test --config=e2e.config.ts --reporter=html",
-    "test:e2e:exchange": "playwright test --config=e2e.config.ts --grep @exchange",
-    "test:e2e:feedback": "playwright test --config=e2e.config.ts --grep @feedback",
-    "test:e2e:funds": "playwright test --config=e2e.config.ts --grep @funds",
-    "test:e2e:login": "playwright test --config=e2e.config.ts --grep @login",
-    "test:e2e:payments": "playwright test --config=e2e.config.ts --grep @payments",
-    "test:e2e:searchbox": "playwright test --config=e2e.config.ts --grep @feedback",
-    "test:e2e:transactions": "playwright test --config=e2e.config.ts --grep @transactions"
+    "test:chrome": "playwright test --config=playwright.config.ts --project=chromium",
+    "test:firefox": "playwright test --config=playwright.config.ts --project=firefox",
+    "test:webkit": "playwright test --config=playwright.config.ts --project=webkit",
+    "test:e2e": "playwright test --config=playwright.config.ts --reporter=html",
+    "test:e2e:exchange": "playwright test --config=playwright.config.ts --grep @exchange",
+    "test:e2e:feedback": "playwright test --config=playwright.config.ts --grep @feedback",
+    "test:e2e:funds": "playwright test --config=playwright.config.ts --grep @funds",
+    "test:e2e:login": "playwright test --config=playwright.config.ts --grep @login",
+    "test:e2e:payments": "playwright test --config=playwright.config.ts --grep @payments",
+    "test:e2e:searchbox": "playwright test --config=playwright.config.ts --grep @searchbox",
+    "test:e2e:transactions": "playwright test --config=playwright.config.ts --grep @transactions"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/michalkasiarz/playwright-poc#readme",
   "dependencies": {
-    "@playwright/test": "^1.23.1"
+    "@playwright/test": "^1.42.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.4",

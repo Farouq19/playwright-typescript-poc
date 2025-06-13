@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test'
-import { LandingPage } from '../../page-objects/LandingPage'
-import { LoginPage } from '../../page-objects/LoginPage'
-import { PayBillsNavBarPage } from '../../page-objects/components/PayBillsNavBarPage'
-import { PurchaseForeignCurrencyPage } from '../../page-objects/PurchaseForeignCurrencyPage'
-import { TopBarMenuLoggedInUserPage } from '../../page-objects/components/TopBarMenuLoggedInUserPage'
+import { locators } from '../../globalLocators.js';
+import { test, expect } from '@playwright/test';
+import { LandingPage } from '../../page-objects/LandingPage';
+import { LoginPage } from '../../page-objects/LoginPage';
+import { PayBillsNavBarPage } from '../../page-objects/components/PayBillsNavBarPage';
+import { PurchaseForeignCurrencyPage } from '../../page-objects/PurchaseForeignCurrencyPage';
+import { TopBarMenuLoggedInUserPage } from '../../page-objects/components/TopBarMenuLoggedInUserPage';
 
-test.describe.parallel('Currency exchagne tests @exchange', () => {
+test.describe.parallel('Currency exchange tests @exchange', () => {
   let landingPage: LandingPage
   let loginPage: LoginPage
   let payBillsNavBarPage: PayBillsNavBarPage
@@ -22,7 +23,7 @@ test.describe.parallel('Currency exchagne tests @exchange', () => {
     await landingPage.visit()
     await landingPage.clickSignIn()
     await loginPage.login('username', 'password')
-    await page.goto('http://zero.webappsecurity.com/bank/account-summary.html')
+    await page.goto('/bank/account-summary.html')
   })
 
   test('Should purchase foreign currency', async ({ page }) => {

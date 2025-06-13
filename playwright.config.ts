@@ -1,8 +1,13 @@
-import { chromium, PlaywrightTestConfig } from '@playwright/test'
+import { defineConfig, devices } from '@playwright/test';
 
-const config: PlaywrightTestConfig = {
+export default defineConfig({
   timeout: 60000,
   retries: 0,
+  testDir: './tests',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },
@@ -10,21 +15,21 @@ const config: PlaywrightTestConfig = {
     ignoreHTTPSErrors: true,
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    baseURL: 'http://zero.webappsecurity.com',
   },
   projects: [
     {
-      name: 'Chromium',
-      use: { browserName: 'chromium' },
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
     {
-      name: 'Firefox',
-      use: { browserName: 'firefox' },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
     {
-      name: 'Webkit',
-      use: { browserName: 'webkit' },
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
   ],
-}
-
-export default config
+});
